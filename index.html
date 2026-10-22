@@ -53,6 +53,18 @@
         .sap-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.25rem; font-size: 0.75rem; font-weight: 700; color: #64748b; cursor: pointer; transition: color 0.15s; }
         .sap-link svg { width: 0.8rem; height: 0.8rem; flex-shrink: 0; }
         .sap-link:hover { color: #E21011; text-decoration: underline; text-underline-offset: 2px; }
+
+        /* Salas fixas da programação */
+        .sala-chip { display: inline-flex; align-items: center; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; line-height: 1.4; text-decoration: none; transition: filter 0.15s; }
+        .sala-chip:hover { filter: brightness(0.88); text-decoration: underline; text-underline-offset: 2px; }
+        .sala-1 { background: #5C8A3A; color: #fff; }
+        .sala-2 { background: #334155; color: #fff; }
+        .sala-3 { background: #DB8F55; color: #1a1a1a; }
+        .oficina-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; background: #E2E8F0; color: #334155; line-height: 1.4; }
+        .sap-link.sala-link-1, .sap-link.sala-link-1:hover { color: #5C8A3A; }
+        .sap-link.sala-link-2, .sap-link.sala-link-2:hover { color: #334155; }
+        .sap-link.sala-link-3, .sap-link.sala-link-3:hover { color: #B8651F; }
+        .grupo-item + .grupo-item { border-top: 1px solid #f1f5f9; padding-top: 0.75rem; }
         h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.01em; }
         .sap-red { color: #E21011; }
         .bg-sap-red { background-color: #E21011; }
@@ -165,275 +177,289 @@
             <div class="max-w-7xl mx-auto text-center">
                 <h2 class="text-3xl font-black mb-6 font-serif tracking-tight uppercase">Programação</h2>
                 <div class="mb-12"><a href="#convidados" class="inline-block text-center text-xs font-extrabold uppercase tracking-widest text-[#E21011] border-2 border-[#E21011] rounded-sm px-3 py-1.5 hover:bg-[#E21011] hover:text-white transition">Clique aqui para conhecer os convidados</a></div>
+                <div id="salas" class="max-w-4xl mx-auto mb-12 scroll-mt-24">
+                    <p class="text-xs font-extrabold uppercase tracking-widest text-[#475569] mb-4">Salas do evento: o mesmo link vale para a semana inteira</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                    <div class="bg-white rounded-md p-5 shadow-sm border-b-8 border-[#5C8A3A] flex flex-col">
+                        <span class="sala-chip sala-1 w-fit">Sala 1</span>
+                        <p class="text-sm font-bold mt-3">Segunda a sexta</p>
+                        <p class="text-xs text-[#475569] mt-0.5 mb-2">Noites, a partir das 19:00</p>
+                        <a href="#salas" class="sap-link sala-link-1" data-sala-link="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Acessar sala Google Meet</a>
+                    </div>
+                    <div class="bg-white rounded-md p-5 shadow-sm border-b-8 border-[#334155] flex flex-col">
+                        <span class="sala-chip sala-2 w-fit">Sala 2</span>
+                        <p class="text-sm font-bold mt-3">Segunda a sexta</p>
+                        <p class="text-xs text-[#475569] mt-0.5 mb-2">Noites, a partir das 19:00</p>
+                        <a href="#salas" class="sap-link sala-link-2" data-sala-link="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Acessar sala Google Meet</a>
+                    </div>
+                    <div class="bg-white rounded-md p-5 shadow-sm border-b-8 border-[#DB8F55] flex flex-col">
+                        <span class="sala-chip sala-3 w-fit">Sala 3</span>
+                        <p class="text-sm font-bold mt-3">Terça, quarta e quinta</p>
+                        <p class="text-xs text-[#475569] mt-0.5 mb-2">Os horários estão nos cartões de cada dia</p>
+                        <a href="#salas" class="sap-link sala-link-3" data-sala-link="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Acessar sala Google Meet</a>
+                    </div>
+                    </div>
+                </div>
                 <div class="flex flex-wrap justify-center gap-6 text-left">
-                    <!-- Segunda 26/10 -->
+                    <!-- Segunda -->
                     <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col h-full">
                         <span class="text-[10px] font-black uppercase text-[#E21011] bg-red-50 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-[#E21011] mb-1">Segunda</p>
-                        <h3 class="text-lg font-bold mb-6">26 de outubro</h3>
-                        <div class="grid grid-cols-2 gap-x-5">
-                            <div class="space-y-4">
+                        <h3 class="text-lg font-bold mb-1">26 de outubro</h3>
+                        <p class="text-xs text-[#475569] mb-6">Salas neste dia: 1 e 2</p>
+                        <div class="space-y-5">
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Abertura + 2 comunicações orais</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Mesa dos egressos</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Pedro Raphael Alencar e Maria Carolina de Jesus</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">O profissional da linguagem no cenário atual</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Caroline Randmer</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Tradução de comédia</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Marun Reis</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Tradução médica na era da IA: pensamento crítico, visão de mercado e olhar humano</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Luciana Bonancio</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                            <div class="space-y-4">
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                        </div>
                         </div>
                     </div>
-                    <!-- Terça 27/10 -->
+                    <!-- Terça -->
                     <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-black flex flex-col h-full">
                         <span class="text-[10px] font-black uppercase text-black bg-slate-100 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-black mb-1">Terça</p>
-                        <h3 class="text-lg font-bold mb-6">27 de outubro</h3>
-                        <div class="grid grid-cols-2 gap-x-5">
-                            <div class="space-y-4">
+                        <h3 class="text-lg font-bold mb-1">27 de outubro</h3>
+                        <p class="text-xs text-[#475569] mb-6">Salas neste dia: 1, 2 e 3</p>
+                        <div class="space-y-5">
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-black"></div>
                                 <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">3 comunicações orais</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Interpretação: aspectos da profissão e contextos do trabalho do Intérprete</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Maria Rosario Garcia Nieves</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-black"></div>
                                 <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Relação tradutor–agência</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Rebecca Guimarães</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Princípios da audiodescrição para Tradutores: um mercado com infinitas possibilidades</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Ana Julia Perrotti-Garcia</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Conversa com Flora Thomson</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Flora Thomson-DeVeaux</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-3" data-sala="3">Sala 3</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-black"></div>
                                 <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">ABRATES</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Jorge Davidson</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                            <div class="space-y-4">
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-black"></div>
-                                <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-black"></div>
-                                <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-black"></div>
-                                <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                        </div>
                         </div>
                     </div>
-                    <!-- Quarta 28/10 -->
+                    <!-- Quarta -->
                     <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col h-full">
                         <span class="text-[10px] font-black uppercase text-[#E21011] bg-red-50 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-[#E21011] mb-1">Quarta</p>
-                        <h3 class="text-lg font-bold mb-6">28 de outubro</h3>
-                        <div class="grid grid-cols-2 gap-x-5">
-                            <div class="space-y-4">
+                        <h3 class="text-lg font-bold mb-1">28 de outubro</h3>
+                        <p class="text-xs text-[#475569] mb-6">Salas neste dia: 1, 2 e 3</p>
+                        <div class="space-y-5">
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Quem mexeu no meu texto? Uma conversa sobre os limites da tradução</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Álvaro Hattnher</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">A tradução de obras audiovisuais derivadas na era transmídia. E agora, tradutor?</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Paulo Noriega</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Outros caminhos além da tradução: da faculdade ao mercado editorial e aos audiolivros</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Tatiana Yoshizumi</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Tradução Audiovisual em 2026: Como passar de fase?</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Will Xavier</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Tradução médica: da teoria à prática</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Gilson Mattos</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-3" data-sala="3">Sala 3</a><span class="oficina-tag">Oficina</span><span class="text-[11px] font-semibold text-[#475569]">20:00 às 22:00</span></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                        </div>
-                            <div class="space-y-4">
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                        </div>
                         </div>
                     </div>
-                    <!-- Quinta 29/10 -->
+                    <!-- Quinta -->
                     <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-black flex flex-col h-full">
                         <span class="text-[10px] font-black uppercase text-black bg-slate-100 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-black mb-1">Quinta</p>
-                        <h3 class="text-lg font-bold mb-6">29 de outubro</h3>
-                        <div class="grid grid-cols-2 gap-x-5">
-                            <div class="space-y-4">
+                        <h3 class="text-lg font-bold mb-1">29 de outubro</h3>
+                        <p class="text-xs text-[#475569] mb-6">Salas neste dia: 1, 2 e 3</p>
+                        <div class="space-y-5">
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-black"></div>
                                 <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Os impactos das transformações digitais sobre o livro e o mercado do livro</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Antonio Hermida</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Beyond Words: Intercultural Competence through Mirrors, Windows and Sliding Doors</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Jane Godwin Coury e Stephan Hughes</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a><span class="oficina-tag">Oficina</span><span class="text-[11px] font-semibold text-[#475569]">19:00 às 21:00</span></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">De olho vivo</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Denise Guimarães Bottmann</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-3" data-sala="3">Sala 3</a><span class="text-[11px] font-semibold text-[#475569]">19:00 às 20:30</span></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-black"></div>
                                 <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Conversa com Karen Kazue</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Karen Kazue Kawana</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-black"></div>
                                 <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Além das palavras: Fluência cultural, ética e mercado na Era da IA</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">William Cassemiro</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold text-[#64748b]">Título a definir</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Luana Pires</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                            <div class="space-y-4">
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-black"></div>
-                                <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-black"></div>
-                                <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-black"></div>
-                                <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                        </div>
                         </div>
                     </div>
-                    <!-- Sexta 30/10 -->
+                    <!-- Sexta -->
                     <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col h-full">
                         <span class="text-[10px] font-black uppercase text-[#E21011] bg-red-50 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-[#E21011] mb-1">Sexta</p>
-                        <h3 class="text-lg font-bold mb-6">30 de outubro</h3>
-                        <div class="grid grid-cols-2 gap-x-5">
-                            <div class="space-y-4">
+                        <h3 class="text-lg font-bold mb-1">30 de outubro</h3>
+                        <p class="text-xs text-[#475569] mb-6">Salas neste dia: 1 e 2</p>
+                        <div class="space-y-5">
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Traduzindo Pistas: Elementar, meu caro Corpus!</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Natalyany Nunes Oliveira</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold text-[#64748b]">Título a definir</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Márcio Mello</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Podcast Traduzindo Pistas</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Monique D’Orazio</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Mercado editorial e a tradução literária como atividade autoral e humana</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Rita Kohl</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a><span class="text-[11px] font-semibold text-[#475569]">20:00 às 22:00</span></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
+                                <div class="mt-1.5 space-y-3">
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Encerramento</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                            <div class="space-y-4">
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">19:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">20:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-100 relative">
-                                <div class="timeline-dot bg-[#E21011]"></div>
-                                <p class="text-xs font-bold text-[#475569]">21:00</p>
-                                <p class="text-sm font-bold">Apresentação</p>
-                                <p class="text-xs italic text-[#475569] mt-0.5">[Nome do palestrante]</p>
-                                <a class="sap-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Link de acesso</a>
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -831,6 +857,20 @@
             document.getElementById('rodape').style.display = (edition === '2026') ? '' : 'none';
             window.scrollTo(0,0);
         }
+    </script>
+    <script>
+        /* LINKS DAS SALAS (Google Meet): cole aqui os três endereços. Valem para todos os dias. */
+        (function () {
+            var SALAS = {
+                1: 'https://meet.google.com/ynd-vgxd-aay',
+                2: 'https://meet.google.com/xza-zdaj-wko',
+                3: 'https://meet.google.com/fky-sxye-nnt'
+            };
+            document.querySelectorAll('[data-sala], [data-sala-link]').forEach(function (a) {
+                var n = a.getAttribute('data-sala') || a.getAttribute('data-sala-link');
+                if (SALAS[n]) { a.href = SALAS[n]; a.target = '_blank'; a.rel = 'noopener'; }
+            });
+        })();
     </script>
 </body>
 </html>
