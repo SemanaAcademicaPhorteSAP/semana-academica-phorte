@@ -56,7 +56,7 @@
 
         /* Salas fixas da programação */
         .sala-chip { display: inline-flex; align-items: center; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; line-height: 1.4; text-decoration: none; transition: filter 0.15s; }
-        .sala-chip:hover { filter: brightness(0.88); text-decoration: underline; text-underline-offset: 2px; }
+        a.sala-chip:hover { filter: brightness(0.88); text-decoration: underline; text-underline-offset: 2px; }
         .sala-1 { background: #5C8A3A; color: #fff; }
         .sala-2 { background: #334155; color: #fff; }
         .sala-3 { background: #DB8F55; color: #1a1a1a; }
@@ -176,7 +176,7 @@
         <section id="programacao" class="py-24 bg-[#E9F1E0] px-4 scroll-mt-24">
             <div class="max-w-7xl mx-auto text-center">
                 <h2 class="text-3xl font-black mb-6 font-serif tracking-tight uppercase">Programação</h2>
-                <div class="mb-12"><a href="#convidados" class="inline-block text-center text-xs font-extrabold uppercase tracking-widest text-[#E21011] border-2 border-[#E21011] rounded-sm px-3 py-1.5 hover:bg-[#E21011] hover:text-white transition">Clique aqui para conhecer os convidados</a></div>
+                <div class="mb-6"><a href="#convidados" class="inline-block text-center text-xs font-extrabold uppercase tracking-widest text-[#E21011] border-2 border-[#E21011] rounded-sm px-3 py-1.5 hover:bg-[#E21011] hover:text-white transition">Clique aqui para conhecer os convidados</a></div>
                 <div id="salas" class="max-w-4xl mx-auto mb-12 scroll-mt-24">
                     <p class="text-xs font-extrabold uppercase tracking-widest text-[#475569] mb-4">Salas do evento: o mesmo link vale para a semana inteira</p>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
@@ -194,27 +194,33 @@
                     </div>
                     <div class="bg-white rounded-md p-5 shadow-sm border-b-8 border-[#DB8F55] flex flex-col">
                         <span class="sala-chip sala-3 w-fit">Sala 3</span>
-                        <p class="text-sm font-bold mt-3">Terça, quarta e quinta</p>
-                        <p class="text-xs text-[#475569] mt-0.5 mb-2">Os horários estão nos cartões de cada dia</p>
+                        <p class="text-sm font-bold mt-3">Segunda a quinta</p>
+                        <p class="text-xs text-[#475569] mt-0.5 mb-2">Noites, a partir das 19:00</p>
                         <a href="#salas" class="sap-link sala-link-3" data-sala-link="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Acessar sala Google Meet</a>
                     </div>
                     </div>
+                    <p class="mt-5 text-sm text-[#475569]">Você também pode acessar as apresentações clicando nas etiquetas coloridas das salas (<strong class="font-extrabold text-[#5C8A3A]">Sala 1</strong>, <strong class="font-extrabold text-[#334155]">Sala 2</strong> ou <strong class="font-extrabold text-[#B8651F]">Sala 3</strong>) que aparecem abaixo, nos respectivos horários.</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-6 text-left">
                     <!-- Segunda -->
-                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col h-full">
+                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col">
                         <span class="text-[10px] font-black uppercase text-[#E21011] bg-red-50 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-[#E21011] mb-1">Segunda</p>
                         <h3 class="text-lg font-bold mb-1">26 de outubro</h3>
-                        <p class="text-xs text-[#475569] mb-6">Salas neste dia: 1 e 2</p>
+                        <p class="text-xs text-[#475569] mb-6">Salas neste dia: 1, 2 e 3</p>
                         <div class="space-y-5">
                             <div class="pl-4 border-l-2 border-slate-100 relative">
                                 <div class="timeline-dot bg-[#E21011]"></div>
                                 <p class="text-xs font-bold text-[#475569]">19:00</p>
                                 <div class="mt-1.5 space-y-3">
                                     <div class="grupo-item">
-                                        <p class="text-sm font-bold">Abertura + 2 comunicações orais</p>
+                                        <p class="text-sm font-bold">Abertura</p>
+                                        <p class="text-xs italic mt-0.5 text-[#475569]">Carolina Bisson e Simone Resende</p>
                                         <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
+                                    </div>
+                                    <div class="grupo-item">
+                                        <p class="text-sm font-bold">Comunicações orais</p>
+                                        <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-3" data-sala="3">Sala 3</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +259,7 @@
                         </div>
                     </div>
                     <!-- Terça -->
-                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-black flex flex-col h-full">
+                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-black flex flex-col">
                         <span class="text-[10px] font-black uppercase text-black bg-slate-100 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-black mb-1">Terça</p>
                         <h3 class="text-lg font-bold mb-1">27 de outubro</h3>
@@ -264,7 +270,7 @@
                                 <p class="text-xs font-bold text-[#475569]">19:00</p>
                                 <div class="mt-1.5 space-y-3">
                                     <div class="grupo-item">
-                                        <p class="text-sm font-bold">3 comunicações orais</p>
+                                        <p class="text-sm font-bold">Comunicações orais</p>
                                         <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
                                     </div>
                                     <div class="grupo-item">
@@ -309,7 +315,7 @@
                         </div>
                     </div>
                     <!-- Quarta -->
-                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col h-full">
+                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col">
                         <span class="text-[10px] font-black uppercase text-[#E21011] bg-red-50 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-[#E21011] mb-1">Quarta</p>
                         <h3 class="text-lg font-bold mb-1">28 de outubro</h3>
@@ -355,7 +361,7 @@
                         </div>
                     </div>
                     <!-- Quinta -->
-                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-black flex flex-col h-full">
+                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-black flex flex-col">
                         <span class="text-[10px] font-black uppercase text-black bg-slate-100 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-black mb-1">Quinta</p>
                         <h3 class="text-lg font-bold mb-1">29 de outubro</h3>
@@ -412,7 +418,7 @@
                         </div>
                     </div>
                     <!-- Sexta -->
-                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col h-full">
+                    <div class="w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-md p-6 shadow-sm border-b-8 border-[#E21011] flex flex-col">
                         <span class="text-[10px] font-black uppercase text-[#E21011] bg-red-50 px-3 py-1 rounded-sm w-fit mb-4">Online</span>
                         <p class="text-xs font-extrabold uppercase tracking-widest text-[#E21011] mb-1">Sexta</p>
                         <h3 class="text-lg font-bold mb-1">30 de outubro</h3>
@@ -428,7 +434,7 @@
                                         <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-1" data-sala="1">Sala 1</a></div>
                                     </div>
                                     <div class="grupo-item">
-                                        <p class="text-sm font-bold text-[#64748b]">Título a definir</p>
+                                        <p class="text-sm font-bold">Desafios de um project manager no contexto de agências internacionais de tradução</p>
                                         <p class="text-xs italic mt-0.5 text-[#475569]">Márcio Mello</p>
                                         <div class="mt-1.5 flex flex-wrap items-center gap-1.5"><a href="#salas" class="sala-chip sala-2" data-sala="2">Sala 2</a></div>
                                     </div>
@@ -530,13 +536,13 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Palestrante convidado: Denise Bottmann -->
+                    <!-- Palestrante convidado: Denise Guimarães Bottmann -->
                     <article class="lg:col-span-2 border-[3px] border-[#E21011] bg-black rounded-md p-5 flex flex-col">
                         <div class="w-44 h-44 mx-auto rounded-full overflow-hidden border-[3px] border-[#E21011]">
-                            <img src="fotos/2026/denise_bottmann.webp" alt="Foto de Denise Bottmann" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                            <img src="fotos/2026/denise_bottmann.webp" alt="Foto de Denise Guimarães Bottmann" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
                         </div>
                         <div class="mt-5 min-h-[10rem]">
-                            <h3 class="font-bold text-white text-center text-lg leading-snug">Denise Bottmann</h3>
+                            <h3 class="font-bold text-white text-center text-lg leading-snug">Denise Guimarães Bottmann</h3>
                             <div class="convidado-bio mt-3 text-slate-300 space-y-2">
                                 <p lang="pt-BR">Historiadora, pesquisadora e tradutora profissional, Denise Guimarães Bottmann nasceu em Curitiba, no dia 15 de novembro de 1954. Graduou-se em História pela Universidade Federal do Paraná, possui Mestrado em Historiografia e Teoria da História pela UNICAMP, tendo iniciado seu Doutorado em Filosofia da História na mesma instituição, o qual não concluiu. Foi docente do Departamento de Filosofia da UNICAMP, de 1983 a 1996.</p>
                                 <p lang="pt-BR">Começou suas atividades como tradutora profissional na década de 1980, quando começou a trabalhar para a Brasiliense. Denise Bottmann já realizou mais de uma centena de traduções para grandes editoras como Brasiliense, Cosac Naify, Companhia das Letras, L&amp;PM, Nova Fronteira, Objetiva e Zahar; em seu currículo estão autores que vão desde John Boyne até Hannah Arendt, passando por Marguerite Duras, Edward Said e Edward Palmer Thompson. Traduz do inglês, francês e italiano, com concentração em textos de literatura e humanidades. Denise Bottmann também é conhecida no cenário editorial brasileiro por defender a valorização do ofício da tradução. Mantém o blog Não Gosto de Plágio (<a href="http://naogostodeplagio.blogspot.com" target="_blank" rel="noopener" class="underline" style="hyphens:none;overflow-wrap:anywhere">http://naogostodeplagio.blogspot.com</a>), onde é possível encontrar um rico material sobre plágios e contrafações de obras traduzidas, bem como levantamentos historiográficos sobre as traduções brasileiras de vários autores da literatura mundial.</p>
@@ -665,6 +671,18 @@
                             </div>
                         </div>
                     </article>
+                    <!-- Palestrante convidado: Natalyany Nunes Oliveira -->
+                    <article class="lg:col-span-2 border-[3px] border-[#E21011] bg-black rounded-md p-5 flex flex-col">
+                        <div class="w-44 h-44 mx-auto rounded-full overflow-hidden border-[3px] border-[#E21011]">
+                            <img src="fotos/2026/natalyany_nunes_oliveira.webp" alt="Foto de Natalyany Nunes Oliveira" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        </div>
+                        <div class="mt-5 min-h-[10rem]">
+                            <h3 class="font-bold text-white text-center text-lg leading-snug">Natalyany Nunes Oliveira</h3>
+                            <div class="convidado-bio mt-3 text-slate-300 space-y-2">
+                                <p lang="pt-BR">Natalyany Nunes é graduada em Letras - Língua Inglesa e mestra em Ciências da Linguagem, ambos pela Universidade do Estado do Rio Grande do Norte. Trabalha com Tradução, com ênfase em Tradução Literária utilizando Linguística de Corpus. Atualmente atua como Assessora da Pró-reitoria de Ensino de Graduação da UERN.</p>
+                            </div>
+                        </div>
+                    </article>
                     <!-- Palestrante convidado: Paulo Noriega -->
                     <article class="lg:col-span-2 border-[3px] border-[#E21011] bg-black rounded-md p-5 flex flex-col">
                         <div class="w-44 h-44 mx-auto rounded-full overflow-hidden border-[3px] border-[#E21011]">
@@ -727,7 +745,7 @@
                         </div>
                     </article>
                     <!-- Palestrante convidado: Will Xavier -->
-                    <article class="lg:col-span-2 lg:col-start-2 border-[3px] border-[#E21011] bg-black rounded-md p-5 flex flex-col">
+                    <article class="lg:col-span-2 border-[3px] border-[#E21011] bg-black rounded-md p-5 flex flex-col">
                         <div class="w-44 h-44 mx-auto rounded-full overflow-hidden border-[3px] border-[#E21011]">
                             <img src="fotos/2026/will_xavier.webp" alt="Foto de Will Xavier" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
                         </div>
@@ -739,7 +757,7 @@
                         </div>
                     </article>
                     <!-- Palestrante convidado: William Cassemiro -->
-                    <article class="sm:col-span-2 sm:w-[calc((100%-2rem)/2)] sm:justify-self-center lg:col-span-2 lg:col-start-4 lg:w-auto lg:justify-self-stretch border-[3px] border-[#E21011] bg-black rounded-md p-5 flex flex-col">
+                    <article class="lg:col-span-2 border-[3px] border-[#E21011] bg-black rounded-md p-5 flex flex-col">
                         <div class="w-44 h-44 mx-auto rounded-full overflow-hidden border-[3px] border-[#E21011]">
                             <img src="fotos/2026/william_cassemiro.webp" alt="Foto de William Cassemiro" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
                         </div>
