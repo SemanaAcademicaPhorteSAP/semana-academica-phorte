@@ -87,8 +87,9 @@
         /* Galeria */
         .gal-section { background: #f8fafc; padding: 6rem 1rem; scroll-margin-top: 4rem; }
         .gal-wrap { max-width: 72rem; margin: 0 auto; text-align: center; }
-        .gal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.875rem; }
-        @media (min-width: 640px) { .gal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; } }
+        .gal-grid { --gal-cols: 2; display: grid; grid-template-columns: repeat(calc(var(--gal-cols) * 2), minmax(0, 1fr)); gap: 0.875rem; }
+        .gal-grid > .gal-item { grid-column: span 2; }
+        @media (min-width: 640px) { .gal-grid { --gal-cols: 3; gap: 1.25rem; } }
         /* Computador: a seção inteira (título, 3 linhas de fotos e setas) cabe na altura da tela; os quadros encolhem em telas baixas */
         @media (min-width: 1024px) {
             .gal-section { padding-top: 3.5rem; padding-bottom: 3.5rem; scroll-margin-top: 1.25rem; }
@@ -97,7 +98,7 @@
             .gal-count { margin-top: .5rem; }
             .gal-grid { width: min(100%, max(38rem, calc((100vh - 18.5rem) * 2.2222 + 4rem))); max-width: 62rem; margin-left: auto; margin-right: auto; }
         }
-        @media (min-width: 1024px) { .gal-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; } .gal-zoom { width: 2rem; height: 2rem; right: .5rem; bottom: .5rem; } .gal-zoom svg { width: 1rem; height: 1rem; } }
+        @media (min-width: 1024px) { .gal-grid { --gal-cols: 5; gap: 1rem; } .gal-zoom { width: 2rem; height: 2rem; right: .5rem; bottom: .5rem; } .gal-zoom svg { width: 1rem; height: 1rem; } }
         .gal-item { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; padding: 0; overflow: hidden; border: 3px solid #E21011; border-radius: 0.75rem; background: #e2e8f0; cursor: zoom-in; box-shadow: 0 1px 2px rgba(15,23,42,.08); transition: transform .25s ease, box-shadow .25s ease; }
         .gal-item img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
         .gal-item::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0) 55%); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
@@ -138,6 +139,31 @@
         .gal-lb-next { right: 1rem; top: 50%; transform: translateY(-50%); }
         @media (max-width: 640px) { .gal-lb-prev, .gal-lb-next { top: auto; bottom: 1rem; transform: none; } .gal-lb-prev { left: 1rem; } .gal-lb-next { right: 1rem; } .gal-lb img { max-height: 74vh; } }
         @media (prefers-reduced-motion: reduce) { .gal-item, .gal-item img, .gal-zoom, .gal-lb, .gal-lb img { transition: none; } .gal-grid.gal-fade { animation: none; } }
+        /* Menu suspenso (celular) */
+        .nav-burger { display: none; margin-left: auto; width: 2.5rem; height: 2.5rem; padding: 0; border: 2px solid #E21011; border-radius: 0.375rem; background: #fff; color: #E21011; align-items: center; justify-content: center; cursor: pointer; transition: background .2s, color .2s; }
+        .nav-burger svg { width: 1.35rem; height: 1.35rem; }
+        .nav-burger .ic-close { display: none; }
+        .nav-burger[aria-expanded="true"] { background: #E21011; color: #fff; }
+        .nav-burger[aria-expanded="true"] .ic-open { display: none; }
+        .nav-burger[aria-expanded="true"] .ic-close { display: block; }
+        .nav-burger:focus-visible { outline: 3px solid #0f172a; outline-offset: 2px; }
+        @media (max-width: 639px) { .nav-burger { display: inline-flex; } }
+        .nav-panel { flex-basis: 100%; display: flex; flex-direction: column; padding: 0.25rem 0 0.75rem; border-top: 1px solid #e2e8f0; max-height: calc(100vh - 6rem); overflow-y: auto; }
+        .nav-panel[hidden] { display: none; }
+        @media (min-width: 640px) { .nav-panel, .nav-panel[hidden] { display: none !important; } }
+        .nav-panel a { display: block; text-align: center; padding: 0.85rem 0.5rem; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1e293b; text-decoration: none; border-bottom: 1px solid #f1f5f9; transition: color .15s; }
+        .nav-panel a:hover, .nav-panel a:active { color: #E21011; }
+        .nav-panel a.nav-cta { margin-top: 0.5rem; border: 0; border-radius: 0.125rem; background: #E21011; color: #fff; text-align: center; }
+        .nav-panel a.nav-cta:hover, .nav-panel a.nav-cta:active { background: #A80D0E; color: #fff; }
+        /* Convidados: o último card (ou os dois últimos) fica centralizado quando a linha não fecha */
+        @media (min-width: 640px) and (max-width: 1023.98px) {
+            #convidados .grid > article:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc((100% - 2rem) / 2); }
+        }
+        @media (min-width: 1024px) {
+            #convidados .grid > article:last-child:nth-child(3n+1) { grid-column: 3 / span 2; }
+            #convidados .grid > article:nth-last-child(2):nth-child(3n+1) { grid-column: 2 / span 2; }
+            #convidados .grid > article:last-child:nth-child(3n+2) { grid-column: 4 / span 2; }
+        }
     </style>
 </head>
 <body>
@@ -166,6 +192,11 @@
                 <a href="#comissao" class="hover:text-red-600 transition">Comissão</a>
                 <a href="#inscricao" class="bg-sap-red text-white px-2 md:px-3 lg:px-6 py-2.5 rounded-sm hover:bg-[#A80D0E] transition shadow-lg shadow-red-100">Inscrição</a>
             </div>
+            <button type="button" id="nav-burger" class="nav-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-panel">
+                <svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+                <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+            </button>
+            <div id="nav-panel" class="nav-panel" hidden><a href="#sobre">Sobre</a><a href="#submissoes" class="nav-cta">Submissões</a><a href="#contato">Contato</a><a href="#programacao">Programação</a><a href="#convidados">Convidados</a><a href="#galeria">Galeria</a><a href="#comissao">Comissão</a><a href="#inscricao" class="nav-cta">Inscrição</a></div>
         </div>
     </nav>
 
@@ -1109,8 +1140,18 @@
             var from = (page - 1) * PER + 1, to = Math.min(page * PER, total);
             count.textContent = total ? 'Fotos ' + from + '–' + to + ' de ' + total : 'Em breve';
             pager.style.display = total > PER ? '' : 'none';
+            centralizar();
             if (animate) { grid.classList.remove('gal-fade'); void grid.offsetWidth; grid.classList.add('gal-fade'); }
         }
+        /* Se a última linha da página não fecha, centraliza as fotos que sobraram */
+        function centralizar() {
+            var cols = parseInt(getComputedStyle(grid).getPropertyValue('--gal-cols'), 10) || 1;
+            var vis = items.filter(function (it) { return !it.hidden; });
+            items.forEach(function (it) { it.style.gridColumn = ''; });
+            var r = vis.length % cols;
+            if (r > 0) vis[vis.length - r].style.gridColumn = (cols - r + 1) + ' / span 2';
+        }
+        window.addEventListener('resize', centralizar);
         function refresh() { total = items.length; pages = Math.max(1, Math.ceil(total / PER)); renderDots(); show(page, false); }
         function go(p) {
             show(p, true);
@@ -1166,6 +1207,22 @@
             var dx = e.changedTouches[0].clientX - startX; startX = null;
             if (Math.abs(dx) > 50) load(cur + (dx < 0 ? 1 : -1));
         }, { passive: true });
+    })();
+    </script>
+    <script>
+    (function () {
+        var btn = document.getElementById('nav-burger'), panel = document.getElementById('nav-panel');
+        if (!btn || !panel) return;
+        function set(open) {
+            panel.hidden = !open;
+            btn.setAttribute('aria-expanded', String(open));
+            btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        }
+        btn.addEventListener('click', function (e) { e.stopPropagation(); set(panel.hidden); });
+        panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+        document.addEventListener('click', function (e) { if (!panel.hidden && !panel.contains(e.target) && e.target !== btn) set(false); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { set(false); btn.focus(); } });
+        window.addEventListener('resize', function () { if (window.innerWidth >= 640) set(false); });
     })();
     </script>
 </body>
